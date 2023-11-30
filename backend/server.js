@@ -19,8 +19,10 @@ app.use('/api/d', require('./routes/api/dumps'));
 app.use('/api/short',require('./routes/api/short'));
 
 
-app.get('/', (req, res) => {
-    res.status(200).json({ Message: 'Hi there' });
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
