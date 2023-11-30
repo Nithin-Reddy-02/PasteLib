@@ -22,8 +22,11 @@ app.use('/api/short',require('./routes/api/short'));
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+//	res.send("Hi There");
+res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
+//app.get('/api/hello/',function(req,res){
+//res.send
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
     // Set static folder
