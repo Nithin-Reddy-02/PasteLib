@@ -79,7 +79,10 @@ router.get('/:slug', optToken, async (req, res) => {
         if (!dump) {
             return res.status(404).json({ errors: [ { msg: 'Dump not fund' } ] });
         }
-
+        Dump.updateOne({slug: req.params.slug},{$inc:{count:1}}).then(()=> {
+            console.log("count increased to 1");
+        })
+        .catch((err)=>{console.log(err)})
         if (dump.access === 'PVT') {
             if (!req.user) {
                 console.error('anonoym user');

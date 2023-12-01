@@ -46,6 +46,10 @@ class Dump extends Component {
                                     <Moment fromNow>{dump.expiration_date}</Moment>
                                 </span>
                                 <span>
+                                    <i className="far fa-eye small" /> views: {' '}
+                                    {dump.count}
+                                </span>
+                                <span>
                                     <i
                                         className={`fa-user${dump.user.username === 'anonymous_user'
                                             ? '-secret fal'

@@ -35,6 +35,10 @@ const DumpSchema = mongoose.Schema(
                 return oneYearFromNow;
             }
         },
+        count:{
+            type: Number,
+            default: 0
+        },
         slug: {
             type: String,
             required: true
