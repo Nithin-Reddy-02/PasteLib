@@ -8,7 +8,7 @@ db = config.get('mongoURI').replace('<password>', process.env.MONGODB_PASSWORD);
 
 const connectDB = async () => {
     try {
-        await mongoose.connect('mongodb+srv://nithin:nithin@cluster0.cvvqvfb.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true});
+        await mongoose.connect('', { useNewUrlParser: true, useUnifiedTopology: true});
         console.log('MongoDB connected');
     } catch (err) {
         console.error('DB error:', err.message);
